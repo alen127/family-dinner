@@ -151,7 +151,7 @@ function say(who, text) {
     b.classList.remove('show', 'preview');
     void b.offsetWidth;
     b.textContent = text;
-    b.classList.add('show');
+    if (text) b.classList.add('show');
   }
 }
 

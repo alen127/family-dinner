@@ -158,6 +158,7 @@ export class Game {
     this.turn = 0;
     this.busy = false;
     this.state = 'combat';
+    this.say('p', '');
     this.say('e', this.rel.intro);
     this.addLog(`${this.rel.name} pulls up a chair.`);
     this.pickIntent();
