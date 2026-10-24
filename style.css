@@ -118,6 +118,15 @@ h1 { font-size: clamp(3rem, 15vw, 5.5rem); }
   opacity: .85;
 }
 
+.source-link {
+  color: var(--cream);
+  opacity: .7;
+  font-size: .85rem;
+  text-underline-offset: 3px;
+}
+.source-link:hover { opacity: 1; }
+.source-link:focus-visible { outline: 3px solid var(--mustard); outline-offset: 3px; }
+
 .reward-heal { color: #c8eb8f; margin: 0; }
 #reward-next { margin: 0; max-width: 28rem; line-height: 1.4; }
 .reward-cards { display: flex; gap: 12px; justify-content: center; width: 100%; padding-top: 8px; }
