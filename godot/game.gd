@@ -567,7 +567,11 @@ func draw_card(r: Rect2, c: Dictionary, playable: bool, hotkey := 0) -> void:
 	var iy := inner.position.y
 	var iw := inner.size.x
 	draw_rect(Rect2(ix, iy, iw, 44), kc)
-	txt(Rect2(ix + 22, iy, iw - 24, 44), c.name, 13, Color.WHITE, bold)
+	var name_size := 13
+	for word in c.name.split(" "):  # shrink so no single word overflows the header
+		while name_size > 9 and bold.get_string_size(word, HORIZONTAL_ALIGNMENT_LEFT, -1, name_size).x > iw - 26:
+			name_size -= 1
+	txt(Rect2(ix + 22, iy, iw - 24, 44), c.name, name_size, Color.WHITE, bold)
 
 	if not c.get("unplayable", false):
 		var cost := Rect2(r.position - Vector2(6, 6), Vector2(30, 30))
